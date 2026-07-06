@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_USER = 'YOUR_DOCKERHUB_USERNAME'      // <-- change this
+        DOCKERHUB_USER = 'nihar777'      // <-- change this
         IMAGE_NAME     = "${DOCKERHUB_USER}/jenkins-docker-demo"
         IMAGE_TAG      = "build-${BUILD_NUMBER}"
         CONTAINER_NAME = "jenkins-docker-demo"
