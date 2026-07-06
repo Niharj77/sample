@@ -9,7 +9,7 @@ class Handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "text/plain")
         self.end_headers()
-        message = f"Hello from Jenkins + Docker CI/CD demo! Version: {VERSION}\n"
+        message = f"Hello from  Nihar Jenkins + Docker CI/CD demo! Version: {VERSION}\n"
         self.wfile.write(message.encode())
 
 if __name__ == "__main__":
