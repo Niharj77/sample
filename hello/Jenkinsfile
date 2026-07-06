@@ -18,12 +18,14 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
-            steps {
-                echo "Building Docker image ${IMAGE_NAME}:${IMAGE_TAG}"
-                sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} -t ${IMAGE_NAME}:latest ."
-            }
+     stage('Build Docker Image') {
+    steps {
+        echo "Building Docker image ${IMAGE_NAME}:${IMAGE_TAG}"
+        dir('hello') {
+            sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} -t ${IMAGE_NAME}:latest ."
         }
+    }
+}
 
         stage('Push to Docker Hub') {
             steps {
